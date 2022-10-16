@@ -14,6 +14,8 @@
             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_pprycxyw.json"  background="transparent"  speed="1"  style="width: 70px; height: 70px;"  loop  autoplay></lottie-player>
            
           <h2 class="navbar-brand" >QuiZZit</h2>
+          <h2 class="navbar-brand" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Result</h2>
+
           <h2 id="logout" class="navbar-brand" onclick="logoutfun()">Logout</h2>
           
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -42,6 +44,19 @@
         
         </center>
       <!-- </div> -->
+      <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button> -->
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Results :</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <h4>HTML = <span id="htmlR">Not attemped</span></h4>
+    <h4>CSS = <span id="cssR">Not attemped</span></h4>
+    <h4>JS = <span id="jsR">Not attemped</span></h4>
+  </div>
+</div>
     
 
 

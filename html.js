@@ -1,4 +1,38 @@
 
+const startingMinutes = 1;
+let time = startingMinutes * 60;
+
+const countdown = document.getElementById("countdown") 
+
+setInterval(updatecount, 1000)
+
+function updatecount (){
+  const minutes = Math.floor(time / 60);
+  let second = time % 60;
+
+  countdown.innerHTML = `${minutes}:${second}`;
+  time--;
+  if(countdown.innerHTML == "-1:-1" ){
+    clearInterval(countdown)
+    alertsc.style.display = "block"
+        htmlcard.style.display = "none"
+
+        alertsc.innerHTML=(`You've scored ${score} / ${quizData.length} <br /> <a href="main.html">Go Back </a>`);
+        window.localStorage.setItem("html",`${score} / ${quizData.length} `)
+  }
+}
+
+
+
+
+
+  // document.documentElement.requestFullscreen()
+  // .then(() => console.log('ful screen activated'))
+  // .catch(() => console.log("err" = "error"))
+
+
+
+
 const quizData = [
     {
       question: "HTML stands for?",
@@ -88,7 +122,10 @@ var alertsc = document.getElementById('alertsc')
 var htmlcard = document.getElementById('htmlcard')
 
   submitBtn.addEventListener("click", () => {
+    
     const answer = getSelection();
+    alertsc.innerHTML=(` You've scored ${score} / ${quizData.length} <br /> <a href="main.html">Go Back </a>`)
+    window.localStorage.setItem("html",`${score} / ${quizData.length} `)
   
     if (answer) {
       if (answer === quizData[currentQuiz].correct) {
@@ -102,12 +139,15 @@ var htmlcard = document.getElementById('htmlcard')
       } else {
         alertsc.style.display = "block"
         htmlcard.style.display = "none"
-
-        alertsc.innerHTML=(`You've scored ${score} / ${quizData.length}`);
+       
       
       }
+      // setTimeout(window.location="main.html",3000);
     }
+     
   });
+  
+
   
 
 

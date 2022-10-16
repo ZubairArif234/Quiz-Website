@@ -1,4 +1,30 @@
 
+
+const startingMinutes = 1;
+let time = startingMinutes * 60;
+
+const countdown = document.getElementById("countdown") 
+
+setInterval(updatecount, 1000)
+
+function updatecount (){
+  const minutes = Math.floor(time / 60);
+  let second = time % 60;
+
+  countdown.innerHTML = `${minutes}:${second}`;
+  time--;
+  if(countdown.innerHTML == "-1:-1" ){
+    clearInterval(countdown)
+    alertsc.style.display = "block"
+        htmlcard.style.display = "none"
+
+        alertsc.innerHTML=(`You've scored ${score} / ${quizData.length} <br /> <a href="main.html">Go Back </a>`);
+        window.localStorage.setItem("css",`${score} / ${quizData.length} `)
+  }
+}
+
+
+
 const quizData = [
     {
       question: "CSS stands for?",
@@ -103,8 +129,8 @@ var htmlcard = document.getElementById('htmlcard')
         alertsc.style.display = "block"
         htmlcard.style.display = "none"
 
-        alertsc.innerHTML=(`You've scored ${score} / ${quizData.length}`);
-        
+        alertsc.innerHTML=(`You've scored ${score} / ${quizData.length} <br /> <a href="main.html">Go Back </a>`);
+        window.localStorage.setItem("css",`${score} / ${quizData.length} `)
       }
     }
   });

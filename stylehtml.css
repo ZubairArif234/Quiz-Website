@@ -26,7 +26,13 @@ body {
 
 .card-header {
     margin: 10px;
+    display: flex;
+    justify-content: space-between;
     color: rgba(84, 83, 213, 1);
+}
+.timmerspan{
+    font-size: 30px;
+   
 }
 
 hr {
